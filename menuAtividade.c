@@ -2,6 +2,7 @@
 #include <locale.h>
 #include <time.h>
 
+
 void main(void){
 	setlocale(LC_ALL, "Portuguese");
 	time_t mytime;
@@ -11,14 +12,16 @@ void main(void){
 	int quantidadeAlunos=0, reprovados=0, aprovados=0;
 	int idade=0, nJogadores=0, contador=0, infantil=0, juvenil=0, juniores=0, adulto=0;
 
-	int op;
-	do{
-	
 	printf("############################\n");
 	printf("### Canaã  dos Carajás 	####\n");
 	printf("###	%d/%d/%d	####\n",tm.tm_mday, tm.tm_mon+1, tm.tm_year+1900);
 	printf("###	Hr: %d:%d:%d	####\n",tm.tm_hour, tm.tm_min, tm.tm_sec);
 	printf("############################");
+	
+	int op;
+	do{
+	
+
 	printf("\nEscolha uma opção:");
 	printf("\n1 - Notas de alunos");
 	printf("\n2 - Verificar categoria de Jogadores");
@@ -28,6 +31,8 @@ void main(void){
 	
 	switch(op){
 		case 1:
+			printf("Engenharia da Computação de Canaã\n");
+
 			printf("Digite a nota dos alunos: ");
 			scanf("%f", &nota);
 			while(nota >= 0){
@@ -42,17 +47,17 @@ void main(void){
 
 	}
 			media = totalNotas/quantidadeAlunos;
-			printf("\nQunatidade notas %.2f ", totalNotas);
-			printf("\nQunatidade alunos %d", quantidadeAlunos);
-			printf("\nAprovados %d", aprovados);
-			printf("\nReprovados %d", reprovados);
-			printf("\nMedia turma %.2f", media);
-			printf("\nA Maior nota e %.2f\n\n", maiorNota);
+			printf("\nQuantidade de alunos  analisados: %d", quantidadeAlunos);
+			printf("\nQuantidade de Alunos Aprovados: %d", aprovados);
+			printf("\nQuantidade de Alunos Reprovados: %d", reprovados);
+			printf("\nMedia de notas da turma: %.2f", media);
+			printf("\nA Maior nota é: %.2f\n\n", maiorNota);
 
 
 			break;
 		
 		case 2:
+			printf("BEM VINDO A ECCFC\n");
 			printf("Quantos jogadores deseja cadastrar: ");
 			scanf("%d", &nJogadores);
 			
@@ -82,10 +87,9 @@ void main(void){
 		
 	}
 			while(contador < nJogadores);
-			printf("\n\nSoma idade adulto %.2f ", idadeAdulto);
 			media = idadeAdulto/adulto;
 			printf("\nTemos %d jogadores na Categoria Juniores", juniores);
-			printf("\nA média de idade dos jogadores Adultos é %.2f\n\n", media);
+			printf("\nA média de idade dos jogadores Adultos é: %.2f\n\n", media);
 
 			break;
 			

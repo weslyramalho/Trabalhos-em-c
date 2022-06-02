@@ -5,8 +5,11 @@ void main(void){
 	setlocale(LC_ALL, "Portuguese");
 	int idade=0, nJogadores, contador=0, infantil, juvenil, juniores, adulto;
 	float idadeAdulto=0, media=0;
+	
+	printf("BEM VINDO A ECCFC\n");
 	printf("Quantos jogadores deseja cadastrar: ");
 	scanf("%d", &nJogadores);
+	
 	do{
 		printf("\n\nQual é a idade do %dº Jogador: ", contador+1);
 		scanf("%d", &idade);
@@ -33,9 +36,8 @@ void main(void){
 		
 	}
 	while(contador < nJogadores);
-	printf("\n\nSoma idade adulto %.2f ", idadeAdulto);
 	media = idadeAdulto/adulto;
 	printf("\nTemos %d jogadores na Categoria Juniores", juniores);
-	printf("\nA média de idade dos jogadores Adultos é %.2f", media);
+	printf("\nA média de idade dos jogadores Adultos é: %.2f", media);
 
 }
