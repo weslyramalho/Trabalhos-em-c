@@ -1,68 +1,21 @@
-#include<stdio.h>
-
-typedef struct Carro{
-	char marca[20];
-	int quantidade;
-	int ano;
-	char cor[15];
-	float peco;
-}carro;
+#include <stdio.h>
+#include <string.h>
 
 void main(void){
-	int n,i;
-	float prec;
-	char marca[50];
-	printf("Quantos carros deseja cadastrar? ");
-	scanf("%d", &n);
-	carro modelo[n];
 	
-	for(i=0; i < n; i++){
-		setbuf(stdin, 0);
-		printf("Qual a marca do carro? ");
-		gets(modelo[i].marca);
-		setbuf(stdin, 0);
-		printf("Quantos veiculos a no estoque? ");
-		scanf("%d", &modelo[i].quantidade);
-		printf("Qual o ano do veiculos? ");
-		scanf("%d", &modelo[i].ano);
-		setbuf(stdin, 0);
-		printf("Qual a cor  do veiculo? ");
-		gets(modelo[i].cor);
-		printf("Qual o valor? ");
-		scanf("%f", &modelo[i].peco);
-	}
+	char nome[50], cidade[50];
 	
-	for(i=0; i < n; i++){
-		printf("\nMarca: %s\n", modelo[i].marca);
-		printf("Estoque: %d\n", modelo[i].quantidade);
-		printf("Ano: %d\n", modelo[i].ano);
-		printf("Cor: %s\n", modelo[i].cor);
-		printf("Preco: %0.2f\n", modelo[i].peco);
-	}
+	printf("nome completo: ");
+	gets(nome);
 	
-	printf("\nEntre com o preco que deseja pesquisar: ");
-	scanf("%f",  &prec);
+	printf("Em que cidade você nasceu? ");
+	gets(cidade);
 	
-	for(i=0; i < n; i++){
-		if(modelo[i].peco >= prec){
-			printf("\nMarca: %s\n", modelo[i].marca);
-			printf("Estoque: %d\n", modelo[i].quantidade);
-			printf("Ano: %d\n", modelo[i].ano);
-			printf("Cor: %s\n", modelo[i].cor);
-		}else printf("\nNão econtrado!");
-	}
-	setbuf(stdin, 0);
-	printf("\nEntre com a marca que deseja pesquisar: ");
-	gets(marca);
+	printf("\nSeu nome %s\n", nome);
+	printf("Você é natural de %s", cidade);
 	
-	for(i=0; i < n; i++){
-		if(strcmp(modelo[i].marca,marca)== 0){
-			printf("\nPreco: %0.2f\n", modelo[i].peco);
-			printf("Estoque: %d\n", modelo[i].quantidade);
-			printf("Ano: %d\n", modelo[i].ano);
-			printf("Cor: %s\n", modelo[i].cor);
-		}else printf("\nCarro não encontrado");
-	}
-	
+	printf("\n\nA diferença de caracteres é: %d ",strlen(nome)-strlen(cidade));
+	printf("\nVetor concatenado é %s", strcat(cidade, nome));
+	printf("\nVetor nome em Maiúsculo é: %s", strupr(nome));
 	
 }
